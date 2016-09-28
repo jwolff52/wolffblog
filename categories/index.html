@@ -20,7 +20,7 @@ Remove invalid categories, and duplicates!
 ===================
 {% endcomment %}
 {% assign categories = "" %}
-{% for category in rawcategories | split:'|' %}
+{% for category in rawcategories %}
 	{% if category != "" %}
 		{% if categories == "" %}
 			{% assign categories = category | split:'|' %}
