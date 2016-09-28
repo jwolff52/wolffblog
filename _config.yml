@@ -17,7 +17,7 @@ incremental:    false
 excerpt_separator: <!--more-->
 
 markdown:       kramdown
-highlighter:    rogue
+highlighter:    rouge
 
 permalink:      date
 paginate_path:  /page:num
