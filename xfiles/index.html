@@ -1,0 +1,20 @@
+---
+layout: page
+title: X Files
+---
+<audio id="xfiles" autobuffer>
+	<source src="../audio/x-files.mp3" type="audio/mpeg" />
+</audio>
+<center><img src="../media/xfiles.jpg" class="btn-large" id="xfilesbtn" /></center>
+
+<script>
+	var button = document.getElementById('xfilesbtn');
+	var audio = document.getElementById('xfiles');
+
+	var onClick = function() {
+		audio.play();
+	};
+
+	button.addEventListener('click', onClick, false);
+</script>
+

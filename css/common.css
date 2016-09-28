@@ -2,11 +2,82 @@ body {
 	padding-top: 70px;
 	padding-bottom: 40px;
 	background: url(../media/footer_lodyas.png) repeat 0 0;
+	font-family: 'Fjord One', serif;
+}
+
+@media (max-width: 767px) {
+	.sidebar {
+		margin-top: 5px;
+	}
+}
+
+.tags-list {
+	padding: 0 5% 0 5%;
+}
+
+.large-text {
+	font-size: 1.2em;
+}
+
+.tags {
+	list-style: none;
+	padding: 0;
+}
+
+.tag {
+	display: inline-block;
+	background: #78cbff;
+	-webkit-transition: all .2 ease-in-out;
+		-moz-transition: all .2 ease-in-out;
+			transition: all .2s ease-in-out;
+	-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+			border-radius: 5px;
+	margin: .3em .2em;
+	padding: .1em .3em 0 .3em;
+}
+
+.tag span {
+	padding-right: .5em;
+	vertical-align: text-top;
+}
+
+@media (min-width: 768px) {
+	.tag:hover {
+		-webkit-transform: scale(1.1);
+			-moz-transform: scale(1.1);
+				transform: scale(1.1);
+		color: #78cbff;
+		background: #000000;
+	}
+
+	.taglink:hover {
+		color: #78cbff !important;
+	}
+}
+
+.taglink {
+	-webkit-transition: all .2 ease-in-out;
+		-moz-transition: all .2 ease-in-out;
+			transition: all .2s ease-in-out;
+}
+
+.taglink, .taglink:hover, .taglink:visited {
+	text-decoration: none;
+	color: #000000;
+}
+
+.posts-by-tag {
+	padding: 0 5%;
+}
+
+.posts-by-tag ul {
+	padding: 0 5%;
 }
 
 .page {
 	background-color: #eee;
-	padding-bottom: 5px;
+	padding: 10px;
 	-webkit-border-radius: 15px;
 		-moz-border-radius: 15px;
 			border-radius: 15px;
@@ -20,23 +91,38 @@ body {
 
 }
 
-.project img {
-
+.project-title {
+	font-size: 1.1;
+	font-family: 'Amaranth', sans-serif;
 }
 
-.description {
+.description > a > img, .description > img {
+	float: left;
+	margin-right: 10px;
+}
 
+.description > a > img {
+	max-width: 39px;
+	max-height: 32px;
+}
+
+.description > img {
+	max-width: 40%;
 }
 
 .posts {
-	
 }
 
 .post {
 	padding-left: 5px;
 }
 
-.post-title  > a{
+.post-title {
+	margin-top: 0;
+	font-family: 'Amaranth', sans-serif;
+}
+
+.post-title  > a {
 	color: #000;
 }
 
@@ -50,75 +136,89 @@ body {
 
 /* Related posts */
 .related {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  border-top: 1px solid #eee;
+	border-top: 1px solid #eee;
 }
+
+.related > h2 {
+	margin-top: 10px;
+}
+
 .related-posts {
-  padding-left: 0;
-  list-style: none;
+	padding-left: 0;
+	list-style: none;
 }
+
 .related-posts h3 {
-  margin-top: 0;
+	margin-top: 0;
 }
+
 .related-posts li small {
-  font-size: 75%;
-  color: #999;
+	font-size: 75%;
+	color: #999999;
 }
+
 .related-posts li a {
-	color: #000;
+	color: #000000;
 }
+
 .related-posts li a:hover {
-  color: #268bd2;
-  text-decoration: none;
+	color: #000000;
 }
+
 .related-posts li a:hover small {
-  color: inherit;
+	color: #999999;
 }
 
 .footer {
 	background: url(../media/pw_pattern.png) repeat 0 0;
-	margin: 15px auto 0 auto;
-	padding: 10px 5px 10px 5px;
 	-webkit-border-radius: 15px;
 		-moz-border-radius: 15px;
 			border-radius: 15px;
-	width: 270px;
+	font-size: .7em;
+	margin-top: 15px;
+	padding: 10px;
 }
 
-.footer-left {
-	margin-left: auto;
-	margin-right: auto;
-	float: left;
-	font-size: .6em;
+@media (min-width: 1230px) {
+	.footer-left {
+		margin-left: auto;
+		margin-right: auto;
+		float: left;
+	}
+
+	.footer-right {
+		margin-left: auto;
+		margin-right: auto;
+		float: right;
+	}
 }
 
-.footer-right {
-	margin-left: auto;
-	margin-right: auto;
-	float: right;
-	font-size: .6em;
+@media (max-width: 1229px) {
+	.footer-right {
+		margin-top: 10px;
+	}
+
+	.footer-right p {
+		margin-bottom: 0;
+	}
 }
 
-#social {
-	margin-left: auto;
-	margin-right: auto;
-	width: 105px;
-	height: 32px
+.powered-by {
+	margin: 0;
+	padding-top: 4px;
+}
+
+@media(min-width: 713px) {
+	#social {
+		margin-left: auto;
+		margin-right: auto;
+		width: 105px;
+		height: 32px
+	}
 }
 
 .text-center {
 	text-align: center;
-}
-
-.content {
-	background: url(../media/cream_pixels_@2X.png) repeat 0 0;
-    -webkit-border-radius: 15px;
-		-moz-border-radius: 15px;
-			border-radius: 15px;
-}
-.content {
-	padding: 1px 16px 16px 16px;
 }
 
 .content > .page > .posts > hr {
@@ -132,6 +232,8 @@ body {
 
 .navbar-brand {
 	color: #444444 !important;
+	font-weight: bold;
+	font-size: 2em;
 }
 
 .navbar-brand:hover {
@@ -170,3 +272,9 @@ body {
     background-position: -2px -38px;
 }
 
+@media(max-width: 250px) {
+	.sprite-twitter-32 {
+		margin: 2px auto 0 auto;
+		display: block;
+	}
+}

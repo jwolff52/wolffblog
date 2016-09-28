@@ -1,0 +1,49 @@
+---
+layout: page
+title: Categories
+---
+
+{% comment %}
+===================
+Extracts tags from all posts
+===================
+{% endcomment %}
+{% assign rawcategories = "" %}
+{% for post in site.posts %}
+	{% assign rawcategories = rawcategories | append:post.category | append:'|' %}
+{% endfor %}
+{% assign rawtags = rawtags | split:'|' | sort %}
+
+{% comment %}
+===================
+Remove invalid categories, and duplicates!
+===================
+{% endcomment %}
+{% assign categories = "" %}
+{% for category in rawcategories | split:'|' %}
+	{% if category != "" %}
+		{% if categories == "" %}
+			{% assign categories = category | split:'|' %}
+		{% endif %}
+	{% endif %}
+{% endfor %}
+
+
+<div class="tags-list tags text-center large-text clearfix">
+	{% for category in categories %}
+		<a class="tag taglink" href="#{{ category | slugify }}"><span class="glyphicon glyphicon-list-alt"></span>{{ category }}</a>
+	{% endfor %}
+</div>
+
+<div class="posts-by-tag">
+	{% for category in categories %}
+		<h2 name="{{ category | slugify }}">{{ category }}</h2>
+		<ul class="related-posts">
+			{% for post in site.posts %}
+				{% if post.category == category %}
+					<li><h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <small>{{ post.date | date_to_long_string }}</small></a></h3></li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	{% endfor %}
+</div>

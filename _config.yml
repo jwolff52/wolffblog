@@ -1,9 +1,10 @@
 source:         .
 destination:    /var/www/jameswolff/
 includes_dir:   ./_includes
+url:		https://jameswolff.me
 
 include:        [".htaccess"]
-exclude:        ["build.sh"]
+exclude:        ["build.sh", "README.md"]
 keep_files:     [".git"]
 encoding:       "utf-8"
 markdown_ext:   "markdown,md"
@@ -12,6 +13,8 @@ future:         false
 unpublished:    false
 
 incremental:    false
+
+excerpt_separator: <!--more-->
 
 markdown:       kramdown
 highlighter:    rogue
