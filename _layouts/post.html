@@ -38,7 +38,25 @@ layout: blogpage
     	script.src   = "{{ site.baseurl }}/js/date.js";
     	document.body.appendChild(script);
 	
-	script   = document.createElement("script");
-    	script.src   = "{{ site.baseurl }}/js/comments.js";
-    	document.body.appendChild(script);
+	document.addEventListener("DOMContentLoaded", function (event) {
+		function loadComments(data) {
+			for (var i=0; i<data.length; i++) {
+				var cuser = data[i].user.login;
+				var cuserlink = "https://www.github.com/" + data[i].user.login;
+				var clink = data[i].html_url;
+				var cbody = data[i].body_html;
+				var cavatarlink = data[i].user.avatar_url;
+				var cdate = Date.parse(data[i].created_at).toString("yyyy-MM-dd HH:mm:ss");
+
+				$("#comments").append("<div class='comment'><div class='commentheader'><div class='commentgravatar'>" + '<img src="' + cavatarlink + '" alt="" width="20" height="20">' + "</div><a class='commentuser' href=\""+ cuserlink + "\">" + cuser + "</a><a class='commentdate' href=\"" + clink + "\">" + cdate + "</a></div><div class='commentbody'>" + cbody + "</div></div>");
+			}
+		}
+
+		$.ajax("https://api.github.com/repos/jwolff52/wolffblog/issues/{{ page.commentIssueId }}/comments", {
+			headers: {Accept: "application/vnd.github.v3.html+json"},
+			success: function(msg){
+				loadComments(msg);
+			}
+		});
+	});
 </script>
