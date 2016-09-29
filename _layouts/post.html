@@ -48,7 +48,7 @@ layout: blogpage
 	}
 
 	$.ajax("https://api.github.com/repos/jwolff52/wolffblog/issues/{{ page.commentIssueId }}/comments", {
-		headers: {Accept: "application/vnd.github.full+json"},
+		headers: {Accept: "application/vnd.github.v3.html+json"},
 		success: function(msg){
 			loadComments(msg);
 		}
