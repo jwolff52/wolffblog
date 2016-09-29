@@ -2,7 +2,7 @@
 layout: post
 title: In the beginning
 published: true
-category: Misc
+category: Miscellaneous
 tags: []
 commentIssueId: 1
 ---
