@@ -34,5 +34,11 @@ layout: blogpage
 </div>
 <!-- This is real hack-ish, but oh well. -->
 <script>
-	document.getElementsByTagName('body').append('<script src="{{ site.baseurl }}/js/date.js"></script><script src="{{ site.baseurl }}/js/comments.js"></script>');
+	var script   = document.createElement("script");
+    	script.src   = "{{ site.baseurl }}/js/date.js";
+    	document.body.appendChild(script);
+	
+	script   = document.createElement("script");
+    	script.src   = "{{ site.baseurl }}/js/comments.js";
+    	document.body.appendChild(script);
 </script>
