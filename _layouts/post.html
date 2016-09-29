@@ -47,7 +47,7 @@ layout: blogpage
 		}
 	}
 
-	$.ajax("https://api.github.com/repos/jwolff52/wolffblog/issues/{{ page.commentIssueid }}/comments", {
+	$.ajax("https://api.github.com/repos/jwolff52/wolffblog/issues/{{ page.commentIssueId }}/comments", {
 		headers: {Accept: "application/vnd.github.full+json"},
 		success: function(msg){
 			loadComments(msg);
