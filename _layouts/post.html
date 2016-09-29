@@ -28,9 +28,9 @@ layout: blogpage
 		</ul>
 	</div>
 {% endif %}
+<h2>Comments</h2>
+<h4>Want to leave a comment? Visit <a href="https://github.com/jwolff52/wolffblog/issues/{{ page.commentIssueId }}">this post's issue page on GitHub</a>! You will need a GitHub account.</h4>
 <div id="comments">
-	<h2>Comments</h2>
-	<h4>Want to leave a comment? Visit <a href="https://github.com/jwolff52/wolffblog/issues/{{ page.commentIssueId }}">this post's issue page on GitHub</a>! You will need a GitHub account.</h4>
 </div>
 <!-- This is real hack-ish, but oh well. -->
 <script>
@@ -48,7 +48,7 @@ layout: blogpage
 				var cavatarlink = data[i].user.avatar_url;
 				//var cdate = Date.parse(data[i].created_at).toString("yyyy-MM-dd HH:mm:ss");
 
-				$("#comments").append("<div class='comment'><div class='commentheader'><div class='commentgravatar'>" + '<img src="' + cavatarlink + '" alt="" width="20" height="20">' + "</div><a class='commentuser' href=\""+ cuserlink + "\">" + cuser + "</a> <a class='commentdate' href=\"" + clink + "\">Comment" + (i + 1) + "</a></div><div class='commentbody'>" + cbody + "</div></div>");
+				$("#comments").append("<div class='comment'><div class='commentheader'><div class='commentgravatar'>" + '<img src="' + cavatarlink + '" alt="" width="20" height="20">' + "</div><a class='commentuser' href=\""+ cuserlink + "\">" + cuser + "</a> <a class='commentdate' href=\"" + clink + "\">Comment " + (i + 1) + "</a></div><div class='commentbody'>" + cbody + "</div></div>");
 			}
 		}
 
