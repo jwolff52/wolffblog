@@ -4,7 +4,7 @@ title: "You put that tag where?"
 published: true
 category: Web Design
 tags: [HTML, Javascript]
-commentissueID: 2
+commentIssueId: 2
 ---
 
 My job is to browse the web. Eight hours a day I sit behind a computer and look for job opportunities for my company. Don't get me wrong my job is great, I am writing this post on my work PC, and I encounter a lot of *really* nicely laid out sites that load wonderfully (excusing the crippling office PC bloat), but there is also a fair share of just plain *ugly* sites, sites that look like ***I*** built them<!--more-->!
