@@ -11,6 +11,10 @@ layout: blogpage
 		{% endfor %}
 	</ul>
 </div>
+<div class="comments">
+	<h2>Comments</h2>
+	<h3>Want to leave a comment? Visit <a href="https://github.com/jwolff52/wolffblog/issues/{{ page.commentIssueId }}">this post's issue page on GitHub</a>! You will need a GitHub account.</h3>
+</div>
 {% if site.related_posts.size > 0 %}
 	<div class="related">
 		<h2>Related Posts</h2>
@@ -28,3 +32,25 @@ layout: blogpage
 		</ul>
 	</div>
 {% endif %}
+<script src="{{ site.baseurl }}/js/date.js"></script>
+<script>
+	function loadComments(data) {
+		for (var i=0; i<data.length; i++) {
+			var cuser = data[i].user.login;
+			var cuserlink = "https://www.github.com/" + data[i].user.login;
+			var clink = "https://github.com/jwolff52/wolffblog/issues/{{ page.commentIssueId }}#issuecomment-" + data[i].url.substring(data[i].url.lastIndexOf("/")+1);
+			var cbody = data[i].body_html;
+			var cavatarlink = data[i].user.avatar_url;
+			var cdate = Date.parse(data[i].created_at).toString("yyyy-MM-dd HH:mm:ss");
+
+			$(".comments").append("<div class='comment'><div class='commentheader'><div class='commentgravatar'>" + '<img src="' + cavatarlink + '" alt="" width="20" height="20">' + "</div><a class='commentuser' href=\""+ cuserlink + "\">" + cuser + "</a><a class='commentdate' href=\"" + clink + "\">" + cdate + "</a></div><div class='commentbody'>" + cbody + "</div></div>");
+		}
+	}
+
+	$.ajax("https://api.github.com/repos/jwolff52/wolffblog/issues/{{ page.commentIssueid }}/comments", {
+		headers: {Accept: "application/vnd.github.full+json"},
+		success: function(msg){
+			loadComments(msg);
+		}
+	});
+</script>
