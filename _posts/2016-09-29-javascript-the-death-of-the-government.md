@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Javascript: The death of the government
+title: "Javascript: The death of the government"
 published: true
 category: Web Design
 tags: [HTML, Javascript]
