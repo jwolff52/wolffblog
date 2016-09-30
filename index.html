@@ -14,9 +14,9 @@ title: print(author.rambles())
 					<a class="btn btn-sm btn-success" href="{{ post.url }}">Full Post</a>
 				</div>
 			</div>
-		{% endif %}
-		{% if forloop.index < forloop.length %}
-			<hr>
+			{% if forloop.index < forloop.length %}
+				<hr>
+			{% endif %}
 		{% endif %}
 	{% endfor %}
 </div>
