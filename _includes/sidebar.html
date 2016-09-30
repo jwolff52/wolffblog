@@ -28,7 +28,7 @@
 	{% for post in site.posts %}
 		{% assign postYM = post.date | date:"%Y-%m" %}
 		{% if postYM == siteYM %}
-			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} - <small>{{ post.date | date_to_long_string }}</small></a><br />
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}<br />&nbsp;&nbsp;&nbsp;&nbsp;<small>{{ post.date | date_to_long_string }}</small></a><br />
 		{% endif %}
 	{% endfor %}
 	<h4>August</h4>
