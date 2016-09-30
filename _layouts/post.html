@@ -3,8 +3,14 @@ layout: blogpage
 ---
 <div class="post">
 	<h1 class="post-title">{{ page.title }}</h1>
+	{% if post.subtitle %}
+		<h2 class="post-subtitle">{{ post.subtitle }}</h2>
+	{% endif %}
 	<span class="post-date">{{ page.date | date_to_string }}</span>
-	<img class="post-img" src="{{ site.baseurl }}/{{ post.contentImage }}" />{{ content }}
+	{% if post.contentImage %}
+		<img class="post-img" src="{{ site.baseurl }}/{{ post.contentImage }}" />
+	{% endif %}
+	{{ content }}
 	<ul class="tags">
 		{% for tag in page.tags %}
 			<li class="tag"><a class="taglink" href="{{ site.url }}/tags#{{ tag | slugify }}"><span class="glyphicon glyphicon-tag"></span>{{ tag }}</a></li>
