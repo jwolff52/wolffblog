@@ -14,7 +14,7 @@ markdown_ext:   "markdown,md"
 paginate: 5
 paginate_path: "/page:num/"
 
-future:         false
+future:         true
 unpublished:    false
 
 incremental:    false
