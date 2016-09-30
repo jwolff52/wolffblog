@@ -113,6 +113,12 @@ body {
 .posts {
 }
 
+.post-img {
+	max-width: 40%;
+	float: left;
+	margin-right: 10px;
+}
+
 .post {
 	padding-left: 5px;
 }
