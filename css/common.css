@@ -446,3 +446,7 @@ body {
 	font-size: 85%;
 	padding: 0 .2em;
 }
+
+.pagination {
+	margin: 0 auto;
+}
