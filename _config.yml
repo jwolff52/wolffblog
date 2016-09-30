@@ -3,11 +3,16 @@ destination:    /var/www/jameswolff/
 includes_dir:   ./_includes
 url:		https://jameswolff.me
 
+gems: ["jekyll-paginate"]
+
 include:        [".htaccess"]
 exclude:        ["build.sh", "README.md"]
 keep_files:     [".git"]
 encoding:       "utf-8"
 markdown_ext:   "markdown,md"
+
+paginate: 5
+paginate_path: "/page:num/"
 
 future:         false
 unpublished:    false
