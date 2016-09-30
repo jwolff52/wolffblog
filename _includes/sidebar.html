@@ -1,4 +1,19 @@
 <div class="page">
+	{% assign drafts = "" | split:"|" %}
+	{% for post in site.posts %}
+		{% for tag in post.tags %}
+			{% if tag == "draft" %}
+				{% assign drafts = drafts | push:post.title %}
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+	{% if drafts.size > 0 %}
+		<h4>Coming soon:</h4>
+		{% for draft in drafts limit:3 %}
+			{{ draft }}
+			<br />
+		{% endfor %}
+	{% endif %}
 	<h4>December</h4>
 	{% assign siteYM = site.time | date:"%Y" | append:"-12" %}
 	{% for post in site.posts %}
