@@ -26,6 +26,6 @@ So with this being the first week and not realizing till today I was gonna post 
 
 Basically the reason I'm doing this is to force myself to stay on top of it. It's just one way for me  to stay on top of this problem before it, quite literally, kills me.
 
-####Footnotes
+<h4>Footnotes</h4>
 
 <span name="fn1">This post will only have this one week, but from now on I will keep four weeks consistent in a post and a monthly average at the bottom of each post. [&#8617;](#c1)</span
