@@ -8,7 +8,7 @@ title: print(author.rambles())
 		{% else %}
 			<div class="post">
 				<div id="{{ post.title }}">
-					<a class="post-title" href="{{ post.url }}"><h2>{{ post.title }}{% if post.subtitle %}:</h2> <h3 class="post-subtitle">{{ post.subtitle }}</h3>{% else %}</h2>{% endif %}</a>
+					<a class="post-title" href="{{ post.url }}"><h2>{{ post.title }}{% if post.subtitle %}: </h2><h3 class="post-subtitle">{{ post.subtitle }}</h3>{% else %}</h2>{% endif %}</a>
 					<span class="post-date">{{ post.date | date_to_long_string }}</span>
 					<p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}...</p>
 					<a class="btn btn-sm btn-success" href="{{ post.url }}">Full Post</a>
