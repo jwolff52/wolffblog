@@ -7,7 +7,7 @@ published: true
 hidden: false
 future: true
 category: Health
-tags: ['draft', 'fitness', 'cycling']
+tags: ['fitness', 'cycling']
 commentIssueId: 3
 ---
 Look at that wonderful human specimen, oh sorry I seem to have...nope that's the right picture? Oh...
