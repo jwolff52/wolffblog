@@ -16,6 +16,7 @@ That's right I am not exactly in the best shape, and that is just what is on the
 
 Once a week, hopefully every Saturday, I will be creating a post with a table like the one below.
 
+{:.table .table-striped .table-bordered .table-condensed}
 | Fitness Stats: Week 1 |     |
 |-----------------|-----------|
 | Caloric Intake  | Unsure    |
