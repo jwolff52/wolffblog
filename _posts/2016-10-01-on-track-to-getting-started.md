@@ -28,4 +28,4 @@ Basically the reason I'm doing this is to force myself to stay on top of it. It'
 
 ####Footnotes
 
-<span name="fn1">This post will only have this one week, but from now on I will keep four weeks consistent in a post and a monthly average at the bottom of each post. [\u21A9](#c1)</span
+<span name="fn1">This post will only have this one week, but from now on I will keep four weeks consistent in a post and a monthly average at the bottom of each post. [&#8617;](#c1)</span
