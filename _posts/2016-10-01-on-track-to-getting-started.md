@@ -12,7 +12,7 @@ Look at that wonderful human specimen, oh sorry I seem to have...nope that's the
 
 That's right I am not exactly in the best shape, and that is just what is on the surface. I am at risk of High Blood Pressure (HBP) and my family has a frequent history of diabetes and heart problems. After having my appendix removed last year and then just last week going to the hospital because of pain that was possibly a heart attack I have decided it is time to change<!--more-->.
 
-Once a week, hopefully every Saturday, I will be creating a post with a table like the one below<sup name="c1">[1](#fn1)</sup>.
+Once a week, hopefully every Saturday, I will be creating a post with a table like the one below<sup name="context1">[1](#footnote1)</sup>.
 
 {:.table .table-striped .table-bordered .table-condensed}
 |Fitness Stats    | 09/25 - 10/01 |
@@ -28,4 +28,6 @@ Basically the reason I'm doing this is to force myself to stay on top of it. It'
 
 <h4>Footnotes</h4>
 
-<span name="fn1">[1]: This post will only have this one week, but from now on I will keep four weeks consistent in a post and a monthly average at the bottom of each post. [&#8617;](#c1)</span>
+<ol>
+  <li name="footnote1">This post will only have this one week, but from now on I will keep four weeks consistent in a post and a monthly average at the bottom of each post. [&#8617;](#context1)</li>
+</ol>
