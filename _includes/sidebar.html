@@ -18,7 +18,7 @@
 	{% for post in site.posts %}
 		{% unless post.tags contains "draft" %}
 			{% assign posts = posts | push:post %}
-		{% endfor %}
+		{% endunless %}
 	{% endfor %}
 	<h4>December</h4>
 	{% assign siteYM = site.time | date:"%Y" | append:"-12" %}
