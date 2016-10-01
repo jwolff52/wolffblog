@@ -29,5 +29,5 @@ Basically the reason I'm doing this is to force myself to stay on top of it. It'
 <h4>Footnotes</h4>
 
 <ol>
-  <li name="footnote1">This post will only have this one week, but from now on I will keep four weeks consistent in a post and a monthly average at the bottom of each post. <a href="3context1">&#8617;</a></li>
+  <li name="footnote1">This post will only have this one week, but from now on I will keep four weeks consistent in a post and a monthly average at the bottom of each post. <a href="#context1">&#8617;</a></li>
 </ol>
