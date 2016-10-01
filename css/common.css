@@ -133,8 +133,9 @@ body {
 	color: #000;
 }
 
-.post-title  > h2 {
+.post-title  > h2, .post-title > h1, {
 	text-decoration: none;
+	display: inline;
 }
 
 .post-subtitle {
