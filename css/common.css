@@ -127,6 +127,11 @@ body {
 	text-indent:50px;
 }
 
+.post > table {
+	display: inline;
+	border: 0px;
+}
+
 .post-title {
 	margin-top: 0;
 	font-family: 'Amaranth', sans-serif;
