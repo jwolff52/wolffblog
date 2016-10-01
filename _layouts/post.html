@@ -2,11 +2,7 @@
 layout: blogpage
 ---
 <div class="post">
-	<h1 class="post-title">{{ page.title }}
-		{% if page.subtitle %}
-			: <h2 class="post-subtitle">{{ page.subtitle }}</h2>
-		{% endif %}
-	</h1>
+	<h1 class="post-title">{{ page.title }}{% if page.subtitle %}:</h1> <h2 class="post-subtitle">{{ page.subtitle }}</h2>{% endif %}
 	<span class="post-date">{{ page.date | date_to_long_string }}</span>
 	{% if page.contentImage %}
 		<img class="post-img" src="{{ site.baseurl }}/{{ page.contentImage }}" />
