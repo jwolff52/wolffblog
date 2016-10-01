@@ -6,7 +6,7 @@ layout: blogpage
 	{% if post.subtitle %}
 		<h2 class="post-subtitle">{{ post.subtitle }}</h2>
 	{% endif %}
-	<span class="post-date">{{ page.date | date_to_string }}</span>
+	<span class="post-date">{{ page.date | date_to_long_string }}</span>
 	{% if post.contentImage %}
 		<img class="post-img" src="{{ site.baseurl }}/{{ post.contentImage }}" />
 	{% endif %}
