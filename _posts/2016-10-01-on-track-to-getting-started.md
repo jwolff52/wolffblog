@@ -18,7 +18,7 @@ Once a week, hopefully every Saturday, I will be creating a post with a table li
 |Fitness Stats    | 09/25 - 10/01 |
 |-----------------|---------------|
 | Caloric Intake  |   Unsure      |
-| Distance Ridden |   25 miles    |
+| Distance Ridden |   27 miles    |
 | Weight Start    |   260.2 lbs   |
 | Weight End      |   261.3 lbs   |
 
