@@ -484,7 +484,7 @@ span.rollover {
 	-o-transition-duration: 1s;
 	-moz-transition-duration: 1s;
 	-webkit-transition: -webkit-transform 1s;
-	background:url(media/emoji/mag_right.png) center center no-repeat #000;
+	background:url(/media/emoji/mag_right.png) center center no-repeat #000;
 	cursor: pointer;
 	height: 346px;
 	width: 347px;
