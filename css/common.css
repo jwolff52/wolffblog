@@ -467,3 +467,9 @@ body {
 	margin: 0 auto;
 	display: table;
 }
+
+.emoji {
+	vertical-align: top;
+	width: 16px;
+	height: auto;
+}
