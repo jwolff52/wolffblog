@@ -474,7 +474,7 @@ body {
 	height: auto;
 }
 
-.content-image {
+.content-image > img {
 	margin: 0 auto;
 	max-width: 75%;
 }
