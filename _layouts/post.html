@@ -9,7 +9,7 @@ layout: blogpage
 	{% if page.contentImage %}
 		<img class="post-img" src="{{ site.baseurl }}{{ page.contentImage }}" />
 	{% endif %}
-	{{ content }}
+	{{ content | emojify }}
 	<ul class="tags">
 		{% for tag in page.tags %}
 			<li class="tag"><a class="taglink" href="{{ site.url }}/tags#{{ tag | slugify }}"><span class="glyphicon glyphicon-tag"></span>{{ tag }}</a></li>

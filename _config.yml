@@ -3,7 +3,7 @@ destination:    /var/www/jameswolff/
 includes_dir:   ./_includes
 url:		https://jameswolff.me
 
-gems: ["jekyll-paginate"]
+gems: ["jekyll-paginate", "gemoji"]
 
 include:        [".htaccess"]
 exclude:        ["build.sh", "README.md"]
@@ -27,6 +27,8 @@ highlighter:    rouge
 permalink:      /:year/:month/:day/:title
 paginate_path:  /page:num
 timezone:       America/Chicago
+
+emoji_dir: ./media/emoji
 
 kramdown:
     input:          GFM
