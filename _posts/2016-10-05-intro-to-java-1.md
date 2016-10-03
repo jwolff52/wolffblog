@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introduction to Java
+title: Introduction to Java Part 1
 subtitle: Setting up your Development Environment
 published: true
 category: Programming
