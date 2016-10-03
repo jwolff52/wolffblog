@@ -1,0 +1,10 @@
+---
+layout: post
+title: Introduction to Java
+subtitle: Setting up your Development Environment
+published: true
+category: Programming
+tags: ['draft', 'Java', 'Tutorial', 'IntelliJ']
+commentIssueId: 4
+---
+The goal of this tutorial series is to be an introduction to Java as a programming language. Java was the first language I learned so this tutorial will be designed for the ultimate beginner, though I won't teach you how to use a computer and install programs :wink:.
