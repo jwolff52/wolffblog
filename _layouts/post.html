@@ -26,6 +26,8 @@ layout: blogpage
   		{% assign minCommonTags =  1 %}
 
   		{% assign maxRelatedCounter = 0 %}
+		
+		{% assign relatedPosts = "" | split:"|" %}
 
   		{% for post in site.posts %}
 
@@ -47,6 +49,7 @@ layout: blogpage
       				<li>
       					<h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} {{ commonTags }} <small>{{ post.date | date_to_long_string }}</small></a></h4>
       				</li>
+				{% assign relatedPosts = relatedPosts | push:post.title %}
       				{% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
       				{% if maxRelatedCounter >= maxRelated %}
         				{% break %}
@@ -57,13 +60,15 @@ layout: blogpage
 			{% for post in site.posts %}
 				{% if post.category == page.category %}
 					{% if post.title != page.title %}
-						<li>
-      							<h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} {{ post.category }} <small>{{ post.date | date_to_long_string }}</small></a></h4>
-      						</li>
-      						{% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
-      						{% if maxRelatedCounter >= maxRelated %}
-        						{% break %}
-      						{% endif %}
+						{% unless relatedPosts contains post.title %}
+							<li>
+      								<h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} {{ post.category }} <small>{{ post.date | date_to_long_string }}</small></a></h4>
+      							</li>
+      							{% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+      							{% if maxRelatedCounter >= maxRelated %}
+        							{% break %}
+      							{% endif %}
+						{% endunless %}
 					{% endif %}
 				{% endif %}
 			{% endfor %}
