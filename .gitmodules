@@ -1,3 +1,6 @@
 [submodule "_plugins/jekyll-emoji"]
 	path = _plugins/jekyll-emoji
 	url = https://github.com/chriskempson/jekyll-emoji
+[submodule "_plugins/jekyll-footnotes"]
+	path = _plugins/jekyll-footnotes
+	url = https://github.com/jwolff52/jekyll-footnotes
