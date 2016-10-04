@@ -513,3 +513,8 @@ span.rollover:hover {
 .anchor:target {
 	padding-top: 55px;
 }
+
+.next-post {
+	text-indent: 0;
+	float: right;
+}
