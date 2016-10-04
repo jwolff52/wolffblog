@@ -28,5 +28,5 @@ Basically the reason I'm doing this is to force myself to stay on top of it. It'
 
 <h4>Footnotes</h4>
 <ol class="footnotes">
-  <li>This post will only have this one week, but from now on I will keep four weeks consistent in a post and a monthly average at the bottom of each post. <a class="anchor" name="fn-1" href="#cont-1">⏎</a></li>
+  <li>This post will only have this one week, but from now on I will keep four weeks consistent in a post and a monthly average at the bottom of each post. <a class="anchor" name="fn-1" href="#cont-1">↵</a></li>
 </ol>
