@@ -3,7 +3,7 @@ destination:    /var/www/jameswolff/
 includes_dir:   ./_includes
 url:		https://jameswolff.me
 
-gems: ["jekyll-paginate", "gemoji", "jekyll/footnotes"]
+gems: ["jekyll-paginate", "gemoji"]
 
 include:        [".htaccess"]
 exclude:        ["build.sh", "README.md"]
