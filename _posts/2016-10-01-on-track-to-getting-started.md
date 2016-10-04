@@ -30,6 +30,6 @@ Basically the reason I'm doing this is to force myself to stay on top of it. It'
 
 {% footnotes %}
   {% fnbody &}
-    <p>This post will only have this one week, but from now on I will keep four weeks consistent in a post and a monthly average at the bottom of each post.</p>
+    This post will only have this one week, but from now on I will keep four weeks consistent in a post and a monthly average at the bottom of each post.
   {% endfnbody %}
 {% endfootnotes %}
