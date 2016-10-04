@@ -5,7 +5,7 @@ subtitle: The biggest loser
 contentImage: '/media/posts/3.jpg'
 published: true
 category: Health
-tags: ['fitness', 'cycling']
+tags: ['Fitness', 'Cycling']
 commentIssueId: 3
 ---
 Look at that wonderful human specimen, oh sorry I seem to have...nope that's the right picture? Oh...
