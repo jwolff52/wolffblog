@@ -28,7 +28,7 @@ The major difference that comes with IDE's is that they point out several differ
 That's it! Once you have the JDK and your IDE of choice installed you are all set! Use the navigation buttons below to go to the next post in this tutorial and if you have any questions use the comments section below!
 
 {:.nav-right}
-{% post_url 2016-10-12-intro-to-java-2.md %}
+[Next]({% link _posts/2016-10-12-intro-to-java-2.md %})
 
 <h4>Footnotes</h4>
 <ol class="footnotes">
