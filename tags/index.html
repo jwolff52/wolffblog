@@ -23,12 +23,14 @@ Remove invalid tags, duplicates are good!
 {% assign tags = "" %}
 {% for tag in rawtags %}
 	{% if tag != "" %}
-		{% if tags == "" %}
-			{% assign tags = tag | split:'|' %}
+		{% if tag != "draft" %}
+			{% if tags == "" %}
+				{% assign tags = tag | split:'|' %}
+			{% endif %}
+			{% unless tags contains tag %}
+				{% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
+			{% endunless %}
 		{% endif %}
-		{% unless tags contains tag %}
-			{% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
-		{% endunless %}
 	{% endif %}
 {% endfor %}
 
@@ -40,7 +42,8 @@ Remove invalid tags, duplicates are good!
 
 <div class="posts-by-tag">
 	{% for tag in tags %}
-		<h2 name="{{ tag | slugify }}">{{ tag }}</h2>
+		<a class="anchor" name="{{ tag | slugify }}"></a>
+		<h2>{{ tag }}</h2>
 		<ul class="related-posts">
 			{% for post in site.posts %}
 				{% if post.tags contains tag %}
