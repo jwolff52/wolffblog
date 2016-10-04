@@ -6,7 +6,7 @@ url:		https://jameswolff.me
 gems: ["jekyll-paginate", "gemoji"]
 
 include:        [".htaccess"]
-exclude:        ["build.sh", "README.md"]
+exclude:        ["build.sh", "README.md", "categories/index.html"]
 keep_files:     [".git"]
 encoding:       "utf-8"
 markdown_ext:   "markdown,md"
