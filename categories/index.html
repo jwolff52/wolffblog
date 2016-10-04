@@ -25,6 +25,9 @@ Remove invalid categories, and duplicates!
 		{% if categories == "" %}
 			{% assign categories = category | split:'|' %}
 		{% endif %}
+		{% unless categories contains category %}
+			{% assign categories = categories | push:category %}
+		{% endunless %}
 	{% endif %}
 {% endfor %}
 
