@@ -37,7 +37,8 @@ Remove invalid categories, and duplicates!
 
 <div class="posts-by-tag">
 	{% for category in categories %}
-		<h2 name="{{ category | slugify }}">{{ category }}</h2>
+		<a class="anchor" name="{{ category | slugify }}"></a>
+		<h2>{{ category }}</h2>
 		<ul class="related-posts">
 			{% for post in site.posts %}
 				{% if post.category == category %}
