@@ -509,3 +509,7 @@ span.rollover:hover {
 	color: #cccccc;
 	font-size: .7em;
 }
+
+.anchor:target {
+	padding-top: 50px;
+}
