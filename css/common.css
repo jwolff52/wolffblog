@@ -518,3 +518,7 @@ span.rollover:hover {
 	text-indent: 0;
 	float: right;
 }
+
+.series-nav {
+	padding: 0 15% 0 15%;
+}
