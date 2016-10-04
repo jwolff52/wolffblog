@@ -18,7 +18,7 @@ public static void main(Stirng[] args) {
 ```
  into something like this:
  
- ```java
+ ``` java
  public static void main(Stirng[] args) {
 
 }
