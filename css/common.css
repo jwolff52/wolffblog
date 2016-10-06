@@ -482,6 +482,7 @@ body {
 
 .content-image-description {
 	text-align: center;
+	text-indent: 0 !important;
 	font-size: .8em;
 	font-weight: bold;
 }
