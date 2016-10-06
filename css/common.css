@@ -5,6 +5,10 @@ body {
 	font-family: 'Fjord One', serif;
 }
 
+P {
+	line-height: 1.7em;
+}
+
 @media (max-width: 767px) {
 	.sidebar {
 		margin-top: 5px;
