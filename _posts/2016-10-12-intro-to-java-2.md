@@ -8,7 +8,7 @@ tags: ['draft', 'Java', 'Tutorial']
 commentIssueId: 5
 ---
 Now that you have your development environment set up and ready to go it is time to write your first program! When you first open up IDEA you will be greeted with a window like the one below.
-<img class="content-image" src="/media/posts/5/01.jpg" alt="IntelliJ IDEA default Dialog" />
-<p class="content-image-description">Screen upon opening IDEA</p>
+<img class="content-image" src="/media/posts/5/01.jpg" alt="Screen upon opening IDEA" />
+<p class="content-image-description">Figure 1: Screen upon opening IDEA</p>
 
 Click "Create New Project" and a new dialog will appear.
