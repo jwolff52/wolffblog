@@ -23,7 +23,7 @@ Right-clicking on the `src` directory should bring up a fairly large context men
 
 <div class="series-nav clearfix">
   <a class="prev-post btn btn-default" href="{% link _posts/2016-10-04-intro-to-java-1.md %}">Previous</a>
-  <!--<a class="next-post btn btn-default" href="{% link _posts/2016-10-12-intro-to-java-3.md %}">Next</a>-->
+  {% comment %}<a class="next-post btn btn-default" href="{% link _posts/2016-10-12-intro-to-java-3.md %}">Next</a>{% endcomment %}
 </div>
 
 <h4>Footnotes</h4>
