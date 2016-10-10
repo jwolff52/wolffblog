@@ -19,7 +19,12 @@ In the "Project Name" section enter "Hello World", clicking "Finish" at the bott
 <a href="/media/posts/5/03.png"><img class="content-image" src="/media/posts/5/03.png" alt="Window after creating a project" /></a>
 <p class="content-image-description">Figure 3: After creating a project it will be opened up with a window looking similar to this one.</p>
 
-Right-clicking on the `src` directory should bring up a fairly large context menu, hover over `New` and select `package`. A package is an identifier for your project that differentiates it from a different Java project with the same name. You can read more on naming conventions for packages [here]({% _link /2016/10/10/naming-packages-in-java.md %}), for now enter `me.[YOURNAME].helloworld`.
+Right-clicking on the `src` directory should bring up a fairly large context menu, hover over `New` and select `package`. A package is an identifier for your project that differentiates it from a different Java project with the same name. You can read more on naming conventions for packages [here]({% link _posts/2016/10/10/naming-packages-in-java.md %}), for now enter `me.[YOURNAME].helloworld`.
+
+<div class="series-nav clearfix">
+  <a class="prev-post btn btn-default" href="{% link _posts/2016-10-12-intro-to-java-2.md %}">Previous</a>
+  <!--<a class="next-post btn btn-default" href="{% link _posts/2016-10-12-intro-to-java-3.md %}">Next</a>-->
+</div>
 
 <h4>Footnotes</h4>
 <ol class="footnotes">
