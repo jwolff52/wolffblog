@@ -1,0 +1,104 @@
+{% assign posts = "" | split:"|" %}
+{% for post in site.posts %}
+	{% unless post.tags contains "draft" %}
+		{% assign posts = posts | push:post %}
+	{% endunless %}
+{% endfor %}
+{% assign currentYear = site.time | date:"%Y" %}
+{% for counter in (2016..currentYear) %}
+	<h4>December</h4>
+	{% assign siteYM = site.time | counter | append:"-12" %}
+	{% for post in posts %}
+		{% assign postYM = post.date | date:"%Y-%m" %}
+		{% if postYM == siteYM %}
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}<br />&nbsp;&nbsp;&nbsp;&nbsp;<small>{{ post.date | date_to_long_string }}</small></a><br />
+		{% endif %}
+	{% endfor %}
+	<h4>November</h4>
+	{% assign siteYM = site.time | counter | append:"-11" %}
+	{% for post in posts %}
+		{% assign postYM = post.date | date:"%Y-%m" %}
+		{% if postYM == siteYM %}
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}<br />&nbsp;&nbsp;&nbsp;&nbsp;<small>{{ post.date | date_to_long_string }}</small></a><br />
+		{% endif %}
+	{% endfor %}
+	<h4>October</h4>
+	{% assign siteYM = site.time | counter | append:"-10" %}
+	{% for post in posts %}
+		{% assign postYM = post.date | date:"%Y-%m" %}
+		{% if postYM == siteYM %}
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}<br />&nbsp;&nbsp;&nbsp;&nbsp;<small>{{ post.date | date_to_long_string }}</small></a><br />
+		{% endif %}
+	{% endfor %}
+	<h4>September</h4>
+	{% assign siteYM = site.time | counter | append:"-09" %}
+	{% for post in posts %}
+		{% assign postYM = post.date | date:"%Y-%m" %}
+		{% if postYM == siteYM %}
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}<br />&nbsp;&nbsp;&nbsp;&nbsp;<small>{{ post.date | date_to_long_string }}</small></a><br />
+		{% endif %}
+	{% endfor %}
+	<h4>August</h4>
+	{% assign siteYM = site.time | counter | append:"-08" %}
+	{% for post in posts %}
+		{% assign postYM = post.date | date:"%Y-%m" %}
+		{% if postYM == siteYM %}
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}<br />&nbsp;&nbsp;&nbsp;&nbsp;<small>{{ post.date | date_to_long_string }}</small></a><br />
+		{% endif %}
+	{% endfor %}
+	<h4>July</h4>
+	{% assign siteYM = site.time | counter | append:"-07" %}
+	{% for post in posts %}
+		{% assign postYM = post.date | date:"%Y-%m" %}
+		{% if postYM == siteYM %}
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}<br />&nbsp;&nbsp;&nbsp;&nbsp;<small>{{ post.date | date_to_long_string }}</small></a><br />
+		{% endif %}
+	{% endfor %}
+	<h4>June</h4>
+	{% assign siteYM = site.time | counter | append:"-06" %}
+	{% for post in posts %}
+		{% assign postYM = post.date | date:"%Y-%m" %}
+		{% if postYM == siteYM %}
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}<br />&nbsp;&nbsp;&nbsp;&nbsp;<small>{{ post.date | date_to_long_string }}</small></a><br />
+		{% endif %}
+	{% endfor %}
+	<h4>May</h4>
+	{% assign siteYM = site.time | counter | append:"-05" %}
+	{% for post in posts %}
+		{% assign postYM = post.date | date:"%Y-%m" %}
+		{% if postYM == siteYM %}
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}<br />&nbsp;&nbsp;&nbsp;&nbsp;<small>{{ post.date | date_to_long_string }}</small></a><br />
+		{% endif %}
+	{% endfor %}
+	<h4>April</h4>
+	{% assign siteYM = site.time | counter | append:"-04" %}
+	{% for post in posts %}
+		{% assign postYM = post.date | date:"%Y-%m" %}
+		{% if postYM == siteYM %}
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}<br />&nbsp;&nbsp;&nbsp;&nbsp;<small>{{ post.date | date_to_long_string }}</small></a><br />
+		{% endif %}
+	{% endfor %}
+	<h4>March</h4>
+	{% assign siteYM = site.time | counter | append:"-03" %}
+	{% for post in posts %}
+		{% assign postYM = post.date | date:"%Y-%m" %}
+		{% if postYM == siteYM %}
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}<br />&nbsp;&nbsp;&nbsp;&nbsp;<small>{{ post.date | date_to_long_string }}</small></a><br />
+		{% endif %}
+	{% endfor %}
+	<h4>February</h4>
+	{% assign siteYM = site.time | counter | append:"-02" %}
+	{% for post in posts %}
+		{% assign postYM = post.date | date:"%Y-%m" %}
+		{% if postYM == siteYM %}
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}<br />&nbsp;&nbsp;&nbsp;&nbsp;<small>{{ post.date | date_to_long_string }}</small></a><br />
+		{% endif %}
+	{% endfor %}
+	<h4>January</h4>
+	{% assign siteYM = site.time | counter | append:"-01" %}
+	{% for post in posts %}
+		{% assign postYM = post.date | date:"%Y-%m" %}
+		{% if postYM == siteYM %}
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}<br />&nbsp;&nbsp;&nbsp;&nbsp;<small>{{ post.date | date_to_long_string }}</small></a><br />
+		{% endif %}
+	{% endfor %}
