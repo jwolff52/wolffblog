@@ -7,7 +7,7 @@ layout: blogpage
 		{% assign posts = posts | push:post %}
 	{% endunless %}
 {% endfor %}
-{% assign currentYear = site.time | date:"%Y" %}
+{% assign currentYear = site.time | date:"%Y" | plus:0 %}
 {% for counter in (2016..currentYear) %}
 	<a class="anchor" name="{{ counter }}"></a><h3>{{ counter }}</h3>
 	<h4>December</h4>
