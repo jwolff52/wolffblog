@@ -39,7 +39,7 @@ layout: blogpage
 					{% if post.url != page.url %}
 						{% if page.tags contains tag %}
 							{% assign sameTagCount = sameTagCount | plus: 1 %}
-							{% capture tagmarkup %} <li class="tag"><a class="tag-link" href="#{{ tag | slugify }}"><span class="glyphicon glyphicon-tag"></span>{{ tag }}</a></span> {% endcapture %}
+							{% capture tagmarkup %} <li class="tag"><a class="tag-link" href="{{site.url }}/tags#{{ tag | slugify }}"><span class="glyphicon glyphicon-tag"></span>{{ tag }}</a></li> {% endcapture %}
 							{% assign commonTags = commonTags | append: tagmarkup %}
 						{% endif %}
 					{% endif %}
@@ -47,7 +47,7 @@ layout: blogpage
 
 				{% if sameTagCount >= minCommonTags %}
 					<li>
-						<h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <ul>{{ commonTags }}</ul> <small>{{ post.date | date_to_long_string }}</small></a></h4>
+						<h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <ul style="display: inline;">{{ commonTags }}</ul> <small>{{ post.date | date_to_long_string }}</small></a></h4>
 					</li>
 					{% assign relatedPosts = relatedPosts | push:post.title %}
 					{% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
