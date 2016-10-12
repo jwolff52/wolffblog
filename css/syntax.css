@@ -62,4 +62,5 @@
 
 pre code {
   white-space: inherit;
+  overflow-x: scroll;
 }
