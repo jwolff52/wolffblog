@@ -9,9 +9,10 @@ layout: blogpage
 {% endfor %}
 {% assign currentYear = site.time | date:"%Y" %}
 {% for counter in (2016..currentYear) %}
-	<a name="{{ counter }}"></a><h3>{{ counter }}</h3>
+	<a class="anchor" name="{{ counter }}"></a><h3>{{ counter }}</h3>
 	<h4>December</h4>
 	{% assign siteYM = site.time | counter | append:"-12" %}
+	{{ siteYM }}
 	{% for post in posts %}
 		{% assign postYM = post.date | date:"%Y-%m" %}
 		{% if postYM == siteYM %}
