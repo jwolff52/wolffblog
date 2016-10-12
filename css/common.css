@@ -499,3 +499,7 @@ P {
 .series-nav {
 	padding: 0 15% 0 15%;
 }
+
+.inline {
+	display: inline;
+}
