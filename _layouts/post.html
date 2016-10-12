@@ -39,7 +39,7 @@ layout: blogpage
 					{% if post.url != page.url %}
 						{% if page.tags contains tag %}
 							{% assign sameTagCount = sameTagCount | plus: 1 %}
-							{% capture tagmarkup %} <a class="tag tag-link" href="#{{ tag | slugify }}"><span class="glyphicon glyphicon-tag"></span>{{ tag }}</a> {% endcapture %}
+							{% capture tagmarkup %} <span class="tag"><a class="tag-link" href="#{{ tag | slugify }}"><span class="glyphicon glyphicon-tag"></span>{{ tag }}</a></span> {% endcapture %}
 							{% assign commonTags = commonTags | append: tagmarkup %}
 						{% endif %}
 					{% endif %}
