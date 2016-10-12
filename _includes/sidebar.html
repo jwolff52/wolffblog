@@ -25,7 +25,7 @@
 		<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}<br />&nbsp;&nbsp;<small>{{ post.date | date_to_long_string }}</small></a><br />
 	{% endfor %}
 	<h4>Archive</h4>
-	{% assign currentYear = site.time | date:"%Y" %}
+	{% assign currentYear = site.time | date:"%Y" | plus:0 %}
 	{% for counter in (2016..currentYear) %}
 		<a href="{{ site.baseurl }}/archive#{{ counter | slugify }}">{{ counter }}</a><br />
 	{% endfor %}
