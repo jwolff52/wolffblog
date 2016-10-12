@@ -71,9 +71,9 @@ That is the end of this part, if you have any questions about what we went over 
 
 <h4>Footnotes</h4>
 <ol class="footnotes">
-  <li>If you are using IntelliJ IDEA and do not see as many options avaliable on this screen it is because you are using the free version, we won't be using any of these so not to worry! <a class="anchor" name="fn-1" href="#cont-1">↵</a></li>
-  <li>You don't need to put the <code>.java</code> extension in this box, it will be added automatically. <a class="anchor" name="fn-2" href="#cont-2">↵</a></li>
-  <li>Class names in java should always be <a href="https://en.wikipedia.org/wiki/Camel_case">CamelCase</a> (e.g. <code>MainClass</code> not <code>mainClass</code>, <code>Mainclass</code>, or <code>MaIncLaSS</code> <a class="anchor" name="fn-3" href="#cont-3">↵</a></li>
-  <li>The "out" folder contains your generated class files, we will go over these more when we talk about packaging and shipping your code. <a class="anchor" name="fn-4" href="#cont-4">↵</a></li>
-  <li>Don't forget to end each line inside a method with a semicolon (<code>;</code>)! <a class="anchor" name="fn-5" href="#cont-5">↵</a></li>
+  <li><a class="anchor" name="fn-1"></a>If you are using IntelliJ IDEA and do not see as many options avaliable on this screen it is because you are using the free version, we won't be using any of these so not to worry! <a href="#cont-1">↵</a></li>
+  <li><a class="anchor" name="fn-2"></a>You don't need to put the <code>.java</code> extension in this box, it will be added automatically. <a href="#cont-2">↵</a></li>
+  <li><a class="anchor" name="fn-3"></a>Class names in java should always be <a href="https://en.wikipedia.org/wiki/Camel_case">CamelCase</a> (e.g. <code>MainClass</code> not <code>mainClass</code>, <code>Mainclass</code>, or <code>MaIncLaSS</code> <a href="#cont-3">↵</a></li>
+  <li><a class="anchor" name="fn-4"></a>The "out" folder contains your generated class files, we will go over these more when we talk about packaging and shipping your code. <a href="#cont-4">↵</a></li>
+  <li><a class="anchor" name="fn-5"></a>Don't forget to end each line inside a method with a semicolon (<code>;</code>)! <a href="#cont-5">↵</a></li>
 </ol>
