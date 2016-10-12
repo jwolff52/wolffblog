@@ -16,5 +16,5 @@ You may be asking yourself, is all of this really all that necessary anyway? Rea
 
 <h4>Footnotes</h4>
 <ol class="footnotes">
-  <li>and I will "own" that domain unless GitHub goes out of business or I change my username (at which point I would get another domain with my new username) <a class="anchor" name="fn-1" href="#cont-1">↵</a></li>
+  <li><a class="anchor" name="fn-1"></a>I will continue "own" that domain unless GitHub goes out of business or I change my username (at which point I would get another domain with my new username) <a href="#cont-1">↵</a></li>
 </ol>
