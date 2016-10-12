@@ -47,7 +47,7 @@ layout: blogpage
 
 				{% if sameTagCount >= minCommonTags %}
 					<li>
-						<h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <ul style="display: inline;">{{ commonTags }}</ul> <small>{{ post.date | date_to_long_string }}</small></a></h4>
+						<h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <ul class="tags">{{ commonTags }}</ul> <small>{{ post.date | date_to_long_string }}</small></a></h4>
 					</li>
 					{% assign relatedPosts = relatedPosts | push:post.title %}
 					{% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
