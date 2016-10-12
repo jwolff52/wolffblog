@@ -11,8 +11,7 @@ layout: blogpage
 {% for counter in (2016..currentYear) %}
 	<a class="anchor" name="{{ counter }}"></a><h3>{{ counter }}</h3>
 	<h4>December</h4>
-	{% assign siteYM = site.time | counter | append:"-12" %}
-	{{ siteYM }}
+	{% assign siteYM = counter | append:"-12" %}
 	{% for post in posts %}
 		{% assign postYM = post.date | date:"%Y-%m" %}
 		{% if postYM == siteYM %}
@@ -20,7 +19,7 @@ layout: blogpage
 		{% endif %}
 	{% endfor %}
 	<h4>November</h4>
-	{% assign siteYM = site.time | counter | append:"-11" %}
+	{% assign siteYM = counter | append:"-11" %}
 	{% for post in posts %}
 		{% assign postYM = post.date | date:"%Y-%m" %}
 		{% if postYM == siteYM %}
@@ -28,7 +27,7 @@ layout: blogpage
 		{% endif %}
 	{% endfor %}
 	<h4>October</h4>
-	{% assign siteYM = site.time | counter | append:"-10" %}
+	{% assign siteYM = counter | append:"-10" %}
 	{% for post in posts %}
 		{% assign postYM = post.date | date:"%Y-%m" %}
 		{% if postYM == siteYM %}
@@ -36,7 +35,7 @@ layout: blogpage
 		{% endif %}
 	{% endfor %}
 	<h4>September</h4>
-	{% assign siteYM = site.time | counter | append:"-09" %}
+	{% assign siteYM = counter | append:"-09" %}
 	{% for post in posts %}
 		{% assign postYM = post.date | date:"%Y-%m" %}
 		{% if postYM == siteYM %}
@@ -44,7 +43,7 @@ layout: blogpage
 		{% endif %}
 	{% endfor %}
 	<h4>August</h4>
-	{% assign siteYM = site.time | counter | append:"-08" %}
+	{% assign siteYM = counter | append:"-08" %}
 	{% for post in posts %}
 		{% assign postYM = post.date | date:"%Y-%m" %}
 		{% if postYM == siteYM %}
@@ -52,7 +51,7 @@ layout: blogpage
 		{% endif %}
 	{% endfor %}
 	<h4>July</h4>
-	{% assign siteYM = site.time | counter | append:"-07" %}
+	{% assign siteYM = counter | append:"-07" %}
 	{% for post in posts %}
 		{% assign postYM = post.date | date:"%Y-%m" %}
 		{% if postYM == siteYM %}
@@ -60,7 +59,7 @@ layout: blogpage
 		{% endif %}
 	{% endfor %}
 	<h4>June</h4>
-	{% assign siteYM = site.time | counter | append:"-06" %}
+	{% assign siteYM = counter | append:"-06" %}
 	{% for post in posts %}
 		{% assign postYM = post.date | date:"%Y-%m" %}
 		{% if postYM == siteYM %}
@@ -68,7 +67,7 @@ layout: blogpage
 		{% endif %}
 	{% endfor %}
 	<h4>May</h4>
-	{% assign siteYM = site.time | counter | append:"-05" %}
+	{% assign siteYM = counter | append:"-05" %}
 	{% for post in posts %}
 		{% assign postYM = post.date | date:"%Y-%m" %}
 		{% if postYM == siteYM %}
@@ -76,7 +75,7 @@ layout: blogpage
 		{% endif %}
 	{% endfor %}
 	<h4>April</h4>
-	{% assign siteYM = site.time | counter | append:"-04" %}
+	{% assign siteYM = counter | append:"-04" %}
 	{% for post in posts %}
 		{% assign postYM = post.date | date:"%Y-%m" %}
 		{% if postYM == siteYM %}
@@ -84,7 +83,7 @@ layout: blogpage
 		{% endif %}
 	{% endfor %}
 	<h4>March</h4>
-	{% assign siteYM = site.time | counter | append:"-03" %}
+	{% assign siteYM = counter | append:"-03" %}
 	{% for post in posts %}
 		{% assign postYM = post.date | date:"%Y-%m" %}
 		{% if postYM == siteYM %}
@@ -92,7 +91,7 @@ layout: blogpage
 		{% endif %}
 	{% endfor %}
 	<h4>February</h4>
-	{% assign siteYM = site.time | counter | append:"-02" %}
+	{% assign siteYM = counter | append:"-02" %}
 	{% for post in posts %}
 		{% assign postYM = post.date | date:"%Y-%m" %}
 		{% if postYM == siteYM %}
@@ -100,7 +99,7 @@ layout: blogpage
 		{% endif %}
 	{% endfor %}
 	<h4>January</h4>
-	{% assign siteYM = site.time | counter | append:"-01" %}
+	{% assign siteYM = counter | append:"-01" %}
 	{% for post in posts %}
 		{% assign postYM = post.date | date:"%Y-%m" %}
 		{% if postYM == siteYM %}
