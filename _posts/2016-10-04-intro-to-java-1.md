@@ -32,6 +32,6 @@ At the end of each tutorial I will post a link to a `.zip` of our source code so
 
 <h4>Footnotes</h4>
 <ol class="footnotes">
-  <li>Some operating systems may require you to restart your computer before you are able to use the JDK <a class="anchor" name="fn-1" href="#cont-1">↵</a></li>
-  <li>Swing is a graphical interface for Java used to build Desktop applications. It will be discussed more in a later tutorial. <a class="anchor" name="fn-2" href="#cont-2">↵</a></li>
+  <li><a class="anchor" name="fn-1"></a>Some operating systems may require you to restart your computer before you are able to use the JDK <a href="#cont-1">↵</a></li>
+  <li><a class="anchor" name="fn-2"></a>Swing is a graphical interface for Java used to build Desktop applications. It will be discussed more in a later tutorial. <a href="#cont-2">↵</a></li>
 </ol>
