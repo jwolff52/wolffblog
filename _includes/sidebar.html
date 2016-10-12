@@ -26,7 +26,7 @@
 	{% endfor %}
 	<h4>Archive</h4>
 	{% assign currentYear = site.time | date:"%Y" | plus:0 %}
-	{% for counter in (2016..2018) %}
-		<a href="{{ site.baseurl }}/archive#{{ counter | slugify }}">{{ counter }}</a><br />
+	{% for counter in (2016..currentYear) %}
+		<a href="{{ site.baseurl }}/archive#{{ counter }}">{{ counter }}</a><br />
 	{% endfor %}
 </div>
