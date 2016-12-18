@@ -81,71 +81,73 @@ layout: blogpage
 		<h4>There are no posts related to this one.</h4>
 	{% endif %}
 </div>
-<h3>Comments</h3>
-<h4>Want to leave a comment? Visit <a href="https://github.com/jwolff52/wolffblog/issues/{{ page.commentIssueId }}">this post's issue page on GitHub</a>! You will need a GitHub account.</h4>
-<div id="comments">
-</div>
-<!-- This is real hack-ish, but oh well. -->
-<script>
-	var script   = document.createElement("script");
-    	script.src   = "{{ site.baseurl }}/js/date.js";
-    	document.body.appendChild(script);
+{% if page.commentIssueId %}
+	<h3>Comments</h3>
+	<h4>Want to leave a comment? Visit <a href="https://github.com/jwolff52/wolffblog/issues/{{ page.commentIssueId }}">this post's issue page on GitHub</a>! You will need a GitHub account.</h4>
+	<div id="comments">
+	</div>
+	<!-- This is real hack-ish, but oh well. -->
+	<script>
+		var script   = document.createElement("script");
+    		script.src   = "{{ site.baseurl }}/js/date.js";
+    		document.body.appendChild(script);
 	
-	document.addEventListener("DOMContentLoaded", function (event) {
-		function loadComments(data) {
-			for (var i=0; i<data.length; i++) {
-				var cuser = data[i].user.login;
-				var cuserlink = "https://www.github.com/" + data[i].user.login;
-				var clink = data[i].html_url;
-				var cbody = data[i].body_html;
-				var cavatarlink = data[i].user.avatar_url;
-				//var cdate = Date.parse(data[i].created_at).toString("yyyy-MM-dd HH:mm:ss");
+		document.addEventListener("DOMContentLoaded", function (event) {
+			function loadComments(data) {
+				for (var i=0; i<data.length; i++) {
+					var cuser = data[i].user.login;
+					var cuserlink = "https://www.github.com/" + data[i].user.login;
+					var clink = data[i].html_url;
+					var cbody = data[i].body_html;
+					var cavatarlink = data[i].user.avatar_url;
+					//var cdate = Date.parse(data[i].created_at).toString("yyyy-MM-dd HH:mm:ss");
 
-				$("#comments").append("<div class='comment'><div class='commentheader'><div class='commentgravatar'>" + '<img src="' + cavatarlink + '" alt="" width="20" height="20">' + "</div><a class='commentuser' href=\""+ cuserlink + "\">" + cuser + "</a> <a class='commentdate' href=\"" + clink + "\">Comment " + (i + 1) + "</a></div><div class='commentbody'>" + cbody + "</div></div>");
+					$("#comments").append("<div class='comment'><div class='commentheader'><div class='commentgravatar'>" + '<img src="' + cavatarlink + '" alt="" width="20" height="20">' + "</div><a class='commentuser' href=\""+ cuserlink + "\">" + cuser + "</a> <a class='commentdate' href=\"" + clink + "\">Comment " + (i + 1) + "</a></div><div class='commentbody'>" + cbody + "</div></div>");
+				}
 			}
-		}
 
-		$.ajax("https://api.github.com/repos/jwolff52/wolffblog/issues/{{ page.commentIssueId }}/comments", {
-			headers: {Accept: "application/vnd.github.v3.html+json"},
-			success: function(msg){
-				loadComments(msg);
-			}
-		});
-	});
-</script>
-<script>
-/*!loadCSS: load a CSS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. Licensed MIT*/
-function loadCSS( href, before, media, callback ){
- 	"use strict";
- 	var ss = window.document.createElement( "link" );
- 	var ref = before || window.document.getElementsByTagName( "script" )[ 0 ];
- 	var sheets = window.document.styleSheets;
- 	ss.rel = "stylesheet";
- 	ss.href = href;
- 	ss.media = "only x"; 
-	if( callback ) {
-		ss.onload = callback;
- 	}
- 	ref.parentNode.insertBefore( ss, ref );
- 	ss.onloadcssdefined = function( cb ){
-		var defined;
-		for( var i = 0; i < sheets.length; i++ ){
-			if( sheets[ i ].href && sheets[ i ].href === ss.href ){
-				defined = true;
-			}
-		}
-		if( defined ){
-			cb();
-		} else {
-			setTimeout(function() {
-				ss.onloadcssdefined( cb );
+			$.ajax("https://api.github.com/repos/jwolff52/wolffblog/issues/{{ page.commentIssueId }}/comments", {
+				headers: {Accept: "application/vnd.github.v3.html+json"},
+				success: function(msg){
+					loadComments(msg);
+				}
 			});
+		});
+	</script>
+	<script>
+		/*!loadCSS: load a CSS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. Licensed MIT*/
+		function loadCSS( href, before, media, callback ){
+ 			"use strict";
+ 			var ss = window.document.createElement( "link" );
+ 			var ref = before || window.document.getElementsByTagName( "script" )[ 0 ];
+ 			var sheets = window.document.styleSheets;
+ 			ss.rel = "stylesheet";
+ 			ss.href = href;
+ 			ss.media = "only x"; 
+			if( callback ) {
+				ss.onload = callback;
+ 			}
+ 			ref.parentNode.insertBefore( ss, ref );
+ 			ss.onloadcssdefined = function( cb ){
+				var defined;
+				for( var i = 0; i < sheets.length; i++ ){
+					if( sheets[ i ].href && sheets[ i ].href === ss.href ){
+						defined = true;
+					}
+				}
+				if( defined ){
+					cb();
+				} else {
+					setTimeout(function() {
+						ss.onloadcssdefined( cb );
+					});
+				}
+			};
+			ss.onloadcssdefined(function() {
+				ss.media = media || "all";
+			});
+			return ss;
 		}
-	};
-	ss.onloadcssdefined(function() {
-		ss.media = media || "all";
-	});
-	return ss;
-}
-loadCSS('/css/syntax.css');
-</script>
+		loadCSS('/css/syntax.css');
+	</script>
+{% endif %}
