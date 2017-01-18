@@ -2,7 +2,7 @@
 layout: post
 title: On track to getting started
 subtitle: The biggest loser
-contentImage: '/media/posts/3.jpg'
+contentImage: ['https://jameswolff.me/media/posts/3.jpg', '']
 published: true
 category: Health
 tags: ['Fitness', 'Cycling']

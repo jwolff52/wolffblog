@@ -1,14 +1,19 @@
 ---
 layout: blogpage
 ---
-<div class="post">
+<div class="post clearfix">
 	<div class="post-title">
 		<h1>{{ page.title }}{% if page.subtitle %}:</h1> <h2 class="post-subtitle">{{ page.subtitle }}</h2>{% endif %}
 	</div>
 	<span class="post-date">{{ page.date | date_to_long_string }}</span>
-	{% if page.contentImage %}
-		<img class="post-img" src="{{ site.baseurl }}{{ page.contentImage }}" />
-	{% endif %}
+	<div class="post-extras clearfix">
+    {% if page.contentImage %}
+		  <a href="{{ page.contentImage[1] }}#"><img class="post-img" src="{{ page.contentImage[0] }}" /></a>
+	  {% endif %}
+    {% if page.jellybeans %}
+      {% include jb{{ page.jellybeans }}.html %}
+    {% endif %}
+  </div>
 	{{ content | emojify }}
 	<ul class="tags">
 		{% for tag in page.tags %}

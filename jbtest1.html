@@ -1,0 +1,13 @@
+
+  // Draw first JellyBean
+  context.beginPath();
+  context.moveTo(TOP_LEFT[0] + (OFFSET * 1), TOP_LEFT[1]);
+  context.quadraticCurveTo(MIDDLE_LEFT[0] + (OFFSET * 1), MIDDLE_LEFT[1], BOTTOM_LEFT[0], BOTTOM_LEFT[1]);
+  context.quadraticCurveTo(MIDDLE_BOTTOM[0] + (OFFSET * 1), MIDDLE_BOTTOM[1], BOTTOM_RIGHT[0], BOTTOM_RIGHT[1]);
+  context.quadraticCurveTo(MIDDLE_RIGHT[0] + (OFFSET * 1), MIDDLE_RIGHT[1], TOP_RIGHT[0], TOP_RIGHT[1]);
+  context.quadraticCurveTo(MIDDLE_TOP[0] + (OFFSET * 1), MIDDLE_TOP[1], TOP_LEFT[0], TOP_LEFT[1]);
+  context.closePath();
+
+  context.lineWidth = 2;
+  context.strokeStyle = 'black';
+  context.stroke();
