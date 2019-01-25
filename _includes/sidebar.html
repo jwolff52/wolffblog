@@ -1,0 +1,32 @@
+<div class="page">
+	{% assign drafts = "" | split:"|" %}
+	{% for post in site.posts %}
+		{% for tag in post.tags %}
+			{% if tag == "draft" %}
+				{% assign drafts = drafts | push:post.title %}
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+	{% if drafts.size > 0 %}
+		<h4>Coming soon:</h4>
+		{% for draft in drafts limit:3 %}
+			{{ draft }}
+			<br />
+		{% endfor %}
+	{% endif %}
+	{% assign posts = "" | split:"|" %}
+	{% for post in site.posts %}
+		{% unless post.tags contains "draft" %}
+			{% assign posts = posts | push:post %}
+		{% endunless %}
+	{% endfor %}
+	<h4>Recent Posts</h4>
+	{% for post in posts limit:3 %}
+		<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}<br />&nbsp;&nbsp;<small>{{ post.date | date_to_long_string }}</small></a><br />
+	{% endfor %}
+	<h4>Archive</h4>
+	{% assign currentYear = site.time | date:"%Y" | plus:0 %}
+	{% for counter in (2016..currentYear) %}
+		<a href="{{ site.baseurl }}/archive#{{ counter }}">{{ counter }}</a><br />
+	{% endfor %}
+</div>

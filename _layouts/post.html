@@ -1,25 +1,158 @@
 ---
-layout: default
-permalink: pretty
+layout: blogpage
 ---
-<div class="post">
-	<h1 class="post-title">{{ page.title }}</h1>
-	<span class="post-date">{{ page.date | date_to_string }}</span>
-	{{ content }}
-</div>
-
-<div class="related">
-	<h2>Related Posts</h2>
-	<ul class="related-posts">
-		{% for post in site.related_posts limit:3 %}
-			<li>
-				<h3>
-					<a href="{{ site.baseurl }}{{ post.url }}">
-						{{ post.title }}
-						<small>{{ post.date | date_to_string }}</small>
-					</a>
-				</h3>
-			</li>
+<div class="post clearfix">
+	<div class="post-title">
+		<h1>{{ page.title }}{% if page.subtitle %}:</h1> <h2 class="post-subtitle">{{ page.subtitle }}</h2>{% endif %}
+	</div>
+	<span class="post-date">{{ page.date | date_to_long_string }}</span>
+	<div class="post-extras clearfix">
+    {% if page.contentImage %}
+		  <a href="{{ page.contentImage[1] }}#"><img class="post-img" src="{{ page.contentImage[0] }}" /></a>
+	  {% endif %}
+    {% if page.jellybeans %}
+      {% include jb{{ page.jellybeans }}.html %}
+    {% endif %}
+  </div>
+	{{ content | emojify }}
+	<ul class="tags">
+		{% for tag in page.tags %}
+			<li class="tag"><a class="taglink" href="{{ site.url }}/tags#{{ tag | slugify }}"><span class="glyphicon glyphicon-tag"></span>{{ tag }}</a></li>
 		{% endfor %}
 	</ul>
 </div>
+<div class="related">
+	<h3>Related Posts</h3>
+	<ul class="related-posts">
+		{% comment %}---> the maximum number of related to posts to be printed {% endcomment %}
+  		{% assign maxRelated = 5 %}
+
+ 		{% comment %}---> the minimum number of common tags to have for a post to be considered as a related post {% endcomment %}
+  		{% assign minCommonTags =  1 %}
+
+  		{% assign maxRelatedCounter = 0 %}
+		
+		{% assign relatedPosts = "" | split:"|" %}
+
+  		{% for post in site.posts %}
+			{% unless post.tags contains "draft" %}
+				{% assign sameTagCount = 0 %}
+				{% assign commonTags = '' %}
+
+				{% for tag in post.tags %}
+					{% comment %}---> Only compare if post is not same as current page {% endcomment %}
+					{% if post.url != page.url %}
+						{% if page.tags contains tag %}
+							{% assign sameTagCount = sameTagCount | plus: 1 %}
+							{% capture tagmarkup %} <li class="tag"><a class="taglink" href="{{site.url }}/tags#{{ tag | slugify }}"><span class="glyphicon glyphicon-tag"></span>{{ tag }}</a></li> {% endcapture %}
+							{% assign commonTags = commonTags | append: tagmarkup %}
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+
+				{% if sameTagCount >= minCommonTags %}
+					<li>
+						<h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> <ul class="inline tags">{{ commonTags }}</ul> <small>{{ post.date | date_to_long_string }}</small></h4>
+					</li>
+					{% assign relatedPosts = relatedPosts | push:post.title %}
+					{% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+					{% if maxRelatedCounter >= maxRelated %}
+						{% break %}
+					{% endif %}
+				{% endif %}
+			{% endunless %}
+  		{% endfor %}
+		{% if maxRelatedCounter < maxRelated %}
+			{% for post in site.posts %}
+				{% unless post.tags contains "draft" %}
+					{% if post.category == page.category %}
+						{% if post.title != page.title %}
+							{% unless relatedPosts contains post.title %}
+								<li>
+									<h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}<!-- {{ post.category }}--> <small>{{ post.date | date_to_long_string }}</small></a></h4>
+								</li>
+								{% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+								{% if maxRelatedCounter >= maxRelated %}
+									{% break %}
+								{% endif %}
+							{% endunless %}
+						{% endif %}
+					{% endif %}
+				{% endunless %}
+			{% endfor %}
+		{% endif %}
+	</ul>
+	{% if maxRelatedCounter == 0 %}
+		<h4>There are no posts related to this one.</h4>
+	{% endif %}
+</div>
+{% if page.commentIssueId %}
+	<h3>Comments</h3>
+	<h4>Want to leave a comment? Visit <a href="https://github.com/jwolff52/wolffblog/issues/{{ page.commentIssueId }}">this post's issue page on GitHub</a>! You will need a GitHub account.</h4>
+	<div id="comments">
+	</div>
+	<!-- This is real hack-ish, but oh well. -->
+	<script>
+		var script   = document.createElement("script");
+    		script.src   = "{{ site.baseurl }}/js/date.js";
+    		document.body.appendChild(script);
+	
+		document.addEventListener("DOMContentLoaded", function (event) {
+			function loadComments(data) {
+				for (var i=0; i<data.length; i++) {
+					var cuser = data[i].user.login;
+					var cuserlink = "https://www.github.com/" + data[i].user.login;
+					var clink = data[i].html_url;
+					var cbody = data[i].body_html;
+					var cavatarlink = data[i].user.avatar_url;
+					//var cdate = Date.parse(data[i].created_at).toString("yyyy-MM-dd HH:mm:ss");
+
+					$("#comments").append("<div class='comment'><div class='commentheader'><div class='commentgravatar'>" + '<img src="' + cavatarlink + '" alt="" width="20" height="20">' + "</div><a class='commentuser' href=\""+ cuserlink + "\">" + cuser + "</a> <a class='commentdate' href=\"" + clink + "\">Comment " + (i + 1) + "</a></div><div class='commentbody'>" + cbody + "</div></div>");
+				}
+			}
+
+			$.ajax("https://api.github.com/repos/jwolff52/wolffblog/issues/{{ page.commentIssueId }}/comments", {
+				headers: {Accept: "application/vnd.github.v3.html+json"},
+				success: function(msg){
+					loadComments(msg);
+				}
+			});
+		});
+	</script>
+	<script>
+		/*!loadCSS: load a CSS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. Licensed MIT*/
+		function loadCSS( href, before, media, callback ){
+ 			"use strict";
+ 			var ss = window.document.createElement( "link" );
+ 			var ref = before || window.document.getElementsByTagName( "script" )[ 0 ];
+ 			var sheets = window.document.styleSheets;
+ 			ss.rel = "stylesheet";
+ 			ss.href = href;
+ 			ss.media = "only x"; 
+			if( callback ) {
+				ss.onload = callback;
+ 			}
+ 			ref.parentNode.insertBefore( ss, ref );
+ 			ss.onloadcssdefined = function( cb ){
+				var defined;
+				for( var i = 0; i < sheets.length; i++ ){
+					if( sheets[ i ].href && sheets[ i ].href === ss.href ){
+						defined = true;
+					}
+				}
+				if( defined ){
+					cb();
+				} else {
+					setTimeout(function() {
+						ss.onloadcssdefined( cb );
+					});
+				}
+			};
+			ss.onloadcssdefined(function() {
+				ss.media = media || "all";
+			});
+			return ss;
+		}
+		loadCSS('/css/syntax.css');
+	</script>
+{% endif %}

@@ -1,38 +1,40 @@
 source:         .
 destination:    /var/www/jameswolff/
 includes_dir:   ./_includes
+url:		https://jameswolff.me
+
+gems: ["jekyll-paginate", "gemoji"]
 
 include:        [".htaccess"]
-exclude:        ["build.sh"]
+exclude:        ["build.sh", "README.md", "categories/index.html"]
 keep_files:     [".git"]
 encoding:       "utf-8"
 markdown_ext:   "markdown,md"
 
-future:         false
+paginate: 5
+paginate_path: "/page:num/"
+
+future:         true
 unpublished:    false
 
 incremental:    false
 
-markdown:       kramdown
-highlighter:    rogue
+excerpt_separator: <!--more-->
 
-permalink:      date
+markdown:       kramdown
+highlighter:    rouge
+
+permalink:      /:year/:month/:day/:title
 paginate_path:  /page:num
 timezone:       America/Chicago
 
+emoji_dir: /media/emoji
+
 kramdown:
-    input:          GFM
-    auto_ids:       true
-    footnote_nr:    1
-    entity_output:  as_char
-    toc_levels:     1..6
-    smart_quotes:   lsquo,rsquo,ldquo,rdquo
-    enable_coderay: false
-    
-    coderay:
-        coderay_wrap:               div
-        coeray_line_numbers:        inline
-        coderay_line_numbers_start: 1
-        coderay_tab_width:          4
-        coderay_bold_every:         10
-        coderay_style:              style
+    input:              GFM
+    auto_ids:           true
+    footnote_nr:        1
+    parse_block_html:   true
+    entity_output:      as_char
+    toc_levels:         1..6
+    smart_quotes:       lsquo,rsquo,ldquo,rdquo

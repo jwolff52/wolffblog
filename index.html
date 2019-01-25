@@ -1,40 +1,41 @@
 ---
-layout: page
-title: print('James Wolff')
+layout: blogpage
+title: print(author.rambles())
 ---
-<script>
-	$(function() {
-		$('.big-excerpt').collapser({ 
-			mode: 'lines',
-			truncate: 2,
-			ellipsis: '',
-			controlBtn: 'btn btn-sm btn-primary',
-			showText: 'Show More',
-			hideText: 'Show Less'
-		});
-	});
-</script>
 <div class="posts">
-	{% for post in site.posts %}
-		<div class="post">
-			<div id="{{ post.title }}">
-				<h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-			
-				<span class="post-date">{{ post.date | date_to_string }}</span>
-				<span class="big-excerpt">
-					{% assign wordCount = post.content | number_of_words %}
-					{% if wordCount <= 200 %}
-						{{ post.content | strip_html | markdownify }}
-					{% else %}
-						{{ post.content | strip_html | truncatewords:200 | markdownify }}
-					{% endif %}
-				</span>
-				<a class="btn btn-sm btn-success" href="{{ post.url }}">Full Post</a>
+	{% for post in paginator.posts %}
+		{% if post.tags contains "draft" %}
+		{% else %}
+			<div class="post">
+				<div id="{{ post.title }}">
+					<a class="post-title" href="{{ post.url }}"><h2>{{ post.title }}{% if post.subtitle %}: </h2><h3 class="post-subtitle">{{ post.subtitle }}</h3>{% else %}</h2>{% endif %}</a>
+					<span class="post-date">{{ post.date | date_to_long_string }}</span>
+					<p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}...</p>
+					<a class="btn btn-sm btn-success" href="{{ post.url }}">Full Post</a>
+				</div>
 			</div>
-		</div>
-		{% if forloop.index < forloop.length %}
-			<hr>
+			{% if forloop.index < forloop.length %}
+				<hr>
+			{% endif %}
 		{% endif %}
 	{% endfor %}
 </div>
+<!-- Pagination links -->
+{% if paginator.total_pages > 1 %}
+	<div class="pagination btn-group">
+		{% if paginator.previous_page %}
+			<a href="{{ paginator.previous_page_path }}" class="previous btn btn-default">Previous</a>
+		{% else %}
+			<span class="previous btn btn-default">Previous</span>
+		{% endif %}
+
+		<span class="page_number btn btn-default">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+		{% if paginator.next_page %}
+			<a href="{{ paginator.next_page_path }}" class="next btn btn-default">Next</a>
+		{% else %}
+			<span class="next btn btn-default">Next</span>
+		{% endif %}
+	</div>
+{% endif %}
 

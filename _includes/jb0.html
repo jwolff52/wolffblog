@@ -1,0 +1,14 @@
+<canvas id="jellybeans"></canvas>
+<script>
+  var canvas = document.getElementById('jellybeans');
+  var context = canvas.getContext('2d');
+
+  //Draw first JellyBean
+  context.beginPath();
+  context.moveTo(0, 15);
+  context.quadraticCurveTo(15, 45, 0, 75)
+  context.closePath();
+
+  context.strokeStyle("green");
+  context.stroke();
+</script>
