@@ -17,7 +17,7 @@ public static void main(String[] args) {
 
 }
 ```
-into something like this: 
+into something like this:
 ``` java
 public static void main(String[] args) {
 
@@ -27,7 +27,7 @@ The major difference that comes with IDE's is that they point out several differ
 
 At the end of each tutorial I will post a link to a `.zip` of our source code so far or if you know how to use git or [want to learn](https://try.github.io/levels/1/challenges/1) you could also just [fork the repository](https://github.com/jwolff52/intro-to-java) on Github! That's it! Once you have the JDK and your IDE of choice installed you are all set! Use the navigation buttons below to go to the next post in this tutorial and if you have any questions use the comments section below!  
 <div class="series-nav clearfix">
-  <a class="next-post btn btn-default" href="{% link _posts/2016-10-12-intro-to-java-2.md %}">Next</a>
+  <a class="next-post btn btn-default" href="{% post_url 2016-10-12-intro-to-java-2 %}">Next</a>
 </div>
 
 <h4>Footnotes</h4>

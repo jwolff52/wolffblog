@@ -19,7 +19,7 @@ In the "Project Name" section enter "Hello World", clicking "Finish" at the bott
 <a href="/media/posts/5/03.png"><img class="content-image" src="/media/posts/5/03.png" alt="Window after creating a project" /></a>
 <p class="content-image-description">Figure 3: After creating a project it will be opened up with a window looking similar to this one.</p>
 
-Right-clicking on the `src` directory should bring up a fairly large context menu, hover over `New` and select `package`. A package is an identifier for your project that differentiates it from a different Java project with the same name. You can read more on naming conventions for packages [here]({% link _posts/2016-10-10-naming-packages-in-java.md %}), for now enter `me.[YOURNAME].helloworld` in the dialog box and press "OK". After you have created your package you will see it appear on the left, if you open your project in a file explorer you will notice that under `${PROJECT_ROOT}/src` there is not a directory named `me.[YOURNAME].helloworld`, but just a directory named `me`. Packages in java are actually a directory structure, but instead of using forward or back slashes they are delimited by periods.
+Right-clicking on the `src` directory should bring up a fairly large context menu, hover over `New` and select `package`. A package is an identifier for your project that differentiates it from a different Java project with the same name. You can read more on naming conventions for packages [here]({% post_url 2016-10-10-naming-packages-in-java %}), for now enter `me.[YOURNAME].helloworld` in the dialog box and press "OK". After you have created your package you will see it appear on the left, if you open your project in a file explorer you will notice that under `${PROJECT_ROOT}/src` there is not a directory named `me.[YOURNAME].helloworld`, but just a directory named `me`. Packages in java are actually a directory structure, but instead of using forward or back slashes they are delimited by periods.
 <a href="/media/posts/5/04.png"><img class="content-image" src="/media/posts/5/04.png" alt="Directory structure created from package" /></a>
 <p class="content-image-description">Figure 4: An example of what your directory structure might look like after creating the package.</p>
 
@@ -65,8 +65,8 @@ Hello World!
 ```
 That is the end of this part, if you have any questions about what we went over leave a comment below and I will do my best to  help out! You can [download a .zip](https://github.com/jwolff52/Blog-Tutorials/archive/4936ff398f0cc2e55480035aa97231671a224ab0.zip) of today's code or [clone it from github](https://github.com/jwolff52/Blog-Tutorials/tree/4936ff398f0cc2e55480035aa97231671a224ab0)
 <div class="series-nav clearfix">
-  <a class="prev-post btn btn-default" href="{% link _posts/2016-10-04-intro-to-java-1.md %}">Previous</a>
-  {% comment %}<a class="next-post btn btn-default" href="{% link _posts/2016-10-12-intro-to-java-3.md %}">Next</a>{% endcomment %}
+  <a class="prev-post btn btn-default" href="{% post_url 2016-10-04-intro-to-java-1 %}">Previous</a>
+  {% comment %}<a class="next-post btn btn-default" href="{% post_url _posts/2016-10-12-intro-to-java-3 %}">Next</a>{% endcomment %}
 </div>
 
 <h4>Footnotes</h4>

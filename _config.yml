@@ -25,7 +25,6 @@ markdown:       kramdown
 highlighter:    rouge
 
 permalink:      /:year/:month/:day/:title
-paginate_path:  /page:num
 timezone:       America/Chicago
 
 emoji_dir: /media/emoji
