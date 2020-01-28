@@ -6,7 +6,7 @@ url:		https://jameswolff.me
 gems: ["jekyll-paginate", "gemoji"]
 
 include:        [".htaccess"]
-exclude:        ["build.sh", "README.md", "categories/index.html"]
+exclude:        ["build.sh", "README.md", "categories/index.html", "LICENSE"]
 keep_files:     [".git"]
 encoding:       "utf-8"
 markdown_ext:   "markdown,md"
@@ -24,7 +24,7 @@ excerpt_separator: <!--more-->
 markdown:       kramdown
 highlighter:    rouge
 
-permalink:      /:year/:month/:day/:title
+permalink:      /:year/:month/:day/:title.html
 timezone:       America/Chicago
 
 emoji_dir: /media/emoji
